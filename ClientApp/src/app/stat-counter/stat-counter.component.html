@@ -1,0 +1,12 @@
+<div>
+  <button type="button" (click)="decrementCounter()" class="btn btn-primary btn-arrow-left">
+    -{{statCounter.statCost }}
+  </button>
+  <button *ngIf="!boundStat" type="button" class="btn btn-link">
+    {{statCounter.statName}} : {{ currentStatLevel }}
+  </button>
+  <button *ngIf="boundStat" type="button" class="btn btn-link">
+    {{statCounter.statName}} : {{ boundStat.level + currentStatLevel }}
+  </button>
+  <button type="button" (click)="incrementCounter()" class="btn btn-primary btn-arrow-right">+{{statCounter.statCost}}</button>
+</div>

@@ -1,0 +1,35 @@
+<a class="btn btn-primary" data-toggle="collapse" href="#advantagaesCollapse" role="button" aria-expanded="false" aria-controls="advantagaesCollapse"> Show/hide availible advantages</a>
+<div *ngIf="AdvantagesAvailiable" class="collapse multi-collapse" id="advantagaesCollapse">
+
+  <div class="form-row">
+    <div class="col">
+      <p aria-live="polite"> <b> Название </b></p>
+    </div>
+    <div class="col">
+      <p aria-live="polite"><b> Name </b> </p>
+    </div>
+    <div class="col">
+      <p aria-live="polite"> Type </p>
+    </div>
+    <div class="col">
+      <p aria-live="polite"> Rarity</p>
+    </div>
+    <div class="col">
+      <p aria-live="polite"> Formula </p>
+    </div>
+    <div class="col">
+      <p aria-live="polite">Costs(del!)</p>
+    </div>
+    <div class="col">
+      <p aria-live="polite"> FCostType(del)</p>
+    </div>
+    <div class="col">
+      <p aria-live="polite">Select </p>
+    </div>
+    <div class="col">
+      <p aria-live="polite"> and buy?</p>
+    </div>
+
+  </div>
+  <app-advantages-component [advantage]="adv" *ngFor="let adv of AdvantagesAvailiable"></app-advantages-component>
+</div>

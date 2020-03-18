@@ -1,0 +1,36 @@
+
+<div class="form-row" *ngIf="advantageCostType">
+  <div class="col">
+    <p aria-live="polite">{{advantage.nameRU}}</p>
+  </div>
+  <div class="col">
+    <p aria-live="polite">{{advantage.nameEN}}</p>
+  </div>
+  <div class="col">
+    <p aria-live="polite">{{advantage.type}}</p>
+  </div>
+  <div class="col">
+    <p aria-live="polite">{{advantage.rarity}}</p>
+  </div>
+  <div class="col">
+    <p aria-live="polite">{{advantage.formula}}</p>
+  </div>
+
+  <div class="col">
+    <p *ngIf="!isValue && !isResistable" aria-live="polite">Base costs: <b>{{firstCost}} </b></p>
+    <input *ngIf="isValue && !isResistable" type="text" class="form-control" placeholder="points...">
+
+    <select *ngIf="isResistable" class="browser-default custom-select">
+      <option selected>Select modifier</option>
+      <option value="0">0,5 x {{firstCost}} = {{(firstCost)*0.5}}</option>
+      <option value="1">1 x {{firstCost}} = {{firstCost}}</option>
+      <option value="2">1,5 x {{firstCost}} = {{firstCost*1.5}}</option>
+      <option value="3">2 x {{firstCost}} = {{firstCost*2}}</option>
+    </select>
+
+  </div>
+
+  <div class="col">
+    <button type="button" class="btn btn-primary">Buy!</button>
+  </div>
+</div>
